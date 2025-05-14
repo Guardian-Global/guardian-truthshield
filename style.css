@@ -1,1 +1,78 @@
-/* Guardian Sovereign Design Theme */
+//* Guardian.global — Sovereign Memory Infrastructure */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0d0d0d;
+    color: #eaeaea;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    padding: 2rem;
+    background: #1a1a1a;
+    border-bottom: 2px solid #4CAF50;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    color: #4CAF50;
+}
+
+p {
+    font-size: 1.1rem;
+    margin: 1rem auto;
+    max-width: 800px;
+}
+
+section {
+    padding: 3rem 1rem;
+    border-bottom: 1px solid #333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    background: #4CAF50;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #45a049;
+}
+
+footer {
+    padding: 1rem;
+    background: #1a1a1a;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.5rem; }
+    p, ul li { font-size: 1rem; }
+}
+* Guardian Sovereign Design Theme */
