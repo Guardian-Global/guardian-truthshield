@@ -1,0 +1,1 @@
+Guardian logos, seals, and visual assets go here.
