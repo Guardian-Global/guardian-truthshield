@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <title>GuardianCapsules | Public Archive</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { guardian: '#A3E635' },
+          fontFamily: { mono: ['Fira Mono', 'Menlo', 'monospace'] }
+        },
+      },
+    };
+  </script>
+  <style>
+    body { font-family: 'Fira Mono', monospace; }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 p-8">
+  <h1 class="text-lime-400 text-3xl font-bold mb-6">🧠 Guardian Public Capsules</h1>
+
+  <div id="grid" class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4"></div>
+
+  <script type="module">
+    const URL = 'https://mpjgcleldijxkvbuxiqg.supabase.co/rest/v1/capsules';
+    const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1wamdjbGVsZGlqeGt2YnV4aXFnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc5MDU2NjgsImV4cCI6MjA2MzQ4MTY2OH0.J0dtCwS_yGIgkjnzJItPb_Ncc-OVwly1CCdtI210xss';
+
+    async function loadCapsules() {
+      const res = await fetch(URL + '?select=*', {
+        headers: {
+          apikey: API_KEY,
+          Authorization: `Bearer ${API_KEY}`
+        }
+      });
+
+      const capsules = await res.json();
+      const grid = document.getElementById('grid');
+
+      if (!capsules.length) {
+        grid.innerHTML = `<p class="text-zinc-400 text-sm">No capsules found. Submit one via /submit.html.</p>`;
+        return;
+      }
+
+      capsules
+        .filter(c => !c.anonymous)
+        .forEach(capsule => {
+          const div = document.createElement('div');
+          div.className = 'bg-zinc-900 border border-zinc-700 p-4 rounded-lg shadow hover:shadow-lime-400/20 transition';
+          div.innerHTML = `
+            <h2 class="text-lime-400 font-semibold text-lg mb-2">${capsule.title}</h2>
+            <p class="text-sm text-zinc-300 mb-2">${capsule.description}</p>
+            <p class="text-xs text-zinc-500 italic">🏷 Tags: ${capsule.tags || '—'}</p>
+            <p class="text-xs text-zinc-600 mt-2 border-t border-zinc-700 pt-2">🕶️ Anonymous: ${capsule.anonymous ? 'Yes' : 'No'}</p>
+          `;
+          grid.appendChild(div);
+        });
+    }
+
+    loadCapsules();
+  </script>
+</body>
+</html>
