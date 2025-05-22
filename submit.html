@@ -1,16 +1,70 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Submit Capsule</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/style.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap" rel="stylesheet">
-  </head>
-  <body class="bg-zinc-950 text-zinc-100 font-mono">
-    <div class="max-w-2xl mx-auto mt-20">
-      <h1 class="text-lime-400 text-2xl mb-4">$ submit-capsule</h1>
-      <p class="text-zinc-400">This page is being connected to your capsule form. Integration in progress...</p>
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit Capsule | Guardian Sovereign Memory</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Fira Mono', monospace;
+    }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 p-6 font-mono">
+  <div class="max-w-2xl mx-auto mt-16">
+    <h1 class="text-lime-400 text-2xl mb-6">$ submit-capsule</h1>
+
+    <form class="space-y-6 bg-zinc-900 p-6 rounded-lg border border-zinc-700 shadow" id="capsule-form">
+      <!-- File Upload -->
+      <label class="block text-lime-400 font-semibold">Upload File</label>
+      <input
+        type="file"
+        class="block w-full text-zinc-100 bg-zinc-800 border border-zinc-600 rounded p-2"
+        accept=".jpg,.jpeg,.png,.mp4,.pdf,.txt"
+        required
+      />
+
+      <!-- Title -->
+      <label class="block text-lime-400 font-semibold">Title</label>
+      <input
+        type="text"
+        placeholder="Enter a title..."
+        class="w-full p-2 rounded bg-zinc-800 border border-zinc-600 text-zinc-100"
+        required
+      />
+
+      <!-- Description -->
+      <label class="block text-lime-400 font-semibold">Description</label>
+      <textarea
+        placeholder="Describe your capsule..."
+        class="w-full p-2 rounded bg-zinc-800 border border-zinc-600 text-zinc-100"
+        rows="4"
+        required
+      ></textarea>
+
+      <!-- Tags -->
+      <label class="block text-lime-400 font-semibold">Tags</label>
+      <input
+        type="text"
+        placeholder="Comma-separated tags"
+        class="w-full p-2 rounded bg-zinc-800 border border-zinc-600 text-zinc-100"
+      />
+
+      <!-- Anonymous Toggle -->
+      <div class="flex items-center gap-3 mt-4">
+        <span class="text-zinc-400">Anonymous</span>
+        <input type="checkbox" class="w-5 h-5 accent-lime-400" />
+      </div>
+
+      <!-- Submit -->
+      <button
+        type="submit"
+        class="w-full mt-6 bg-lime-400 text-zinc-900 font-bold py-2 rounded hover:bg-lime-300 transition"
+      >
+        Submit Capsule
+      </button>
+    </form>
+  </div>
+</body>
 </html>
