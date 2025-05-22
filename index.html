@@ -1,90 +1,103 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Guardian Sovereign Memory Infrastructure</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      html {
-        font-family: 'Fira Mono', monospace;
-      }
-      .text-guardian {
-        color: #A3E635;
-      }
-      .bg-guardian {
-        background-color: #09090b;
-      }
-      .btn {
-        padding: 0.5rem 1rem;
-        border-radius: 0.375rem;
-        font-weight: bold;
-        text-decoration: none;
-      }
-      .btn-primary {
-        background-color: #A3E635;
-        color: #09090b;
-      }
-      .btn-secondary {
-        border: 2px solid #A3E635;
-        color: #A3E635;
-      }
-    </style>
-  </head>
-  <body class="bg-guardian text-zinc-100 px-6 py-10 space-y-16">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guardian Sovereign Memory Infrastructure</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            guardian: '#A3E635',
+          },
+          fontFamily: {
+            mono: ['Fira Mono', 'Menlo', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .btn-primary {
+      background-color: #A3E635;
+      color: #09090b;
+    }
+    .btn-secondary {
+      border: 2px solid #A3E635;
+      color: #A3E635;
+    }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-mono">
 
-    <!-- Hero Section -->
-    <header class="text-center space-y-4">
-      <h1 class="text-3xl font-bold text-guardian">Guardian Sovereign Memory Infrastructure</h1>
-      <p class="text-zinc-400">Immutable. Uncensorable. Verified. Defending truth, preserving authentic memory, and securing AI-human integrity.</p>
-      <div class="flex justify-center gap-4 mt-4">
-        <a href="/certificates.html" class="btn btn-primary">View Veritas Certificates</a>
-        <a href="/about.html" class="btn btn-secondary">Learn More About Guardian</a>
+  <!-- Hero Section -->
+  <header class="text-center space-y-4 py-16">
+    <h1 class="text-3xl font-bold text-guardian">Guardian Sovereign Memory Infrastructure</h1>
+    <p class="text-xl max-w-xl mx-auto text-zinc-400">
+      Immutable. Uncensorable. Verified. Defending truth, preserving authentic memory, and securing AI-human integrity.
+    </p>
+    <div class="flex justify-center gap-4 mt-4">
+      <a href="/about.html" class="btn btn-secondary px-5 py-2 rounded border-zinc-600 text-zinc-300 hover:bg-zinc-800 transition">Learn More About Guardian</a>
+      <a href="/submit.html" class="px-5 py-2 rounded bg-guardian text-zinc-900 font-semibold shadow hover:bg-teal-400 transition">Submit a Capsule</a>
+    </div>
+  </header>
+
+  <!-- Truth Sovereignty Section -->
+  <section class="max-w-3xl mx-auto text-center">
+    <h2 class="text-2xl md:text-3xl font-semibold text-guardian">Truth Sovereignty Begins Here</h2>
+    <p class="text-zinc-300">
+      Guardian is the world’s first Sovereign Memory Infrastructure, designed to anchor verified truth in a digital era of misinformation. Through SealChain custody, Vaultstream preservation, and Veritas certification, Guardian defends reality itself.
+    </p>
+  </section>
+
+  <!-- SealChain Section -->
+  <section class="max-w-3xl mx-auto text-center">
+    <h2 class="text-xl text-guardian font-semibold mb-2">SealChain Custody: Immutable Chain of Truth</h2>
+    <p class="text-zinc-300">
+      Guardian’s SealChain establishes an unbreakable chain of custody for every verified testimony, document, and memory capsule. Each Seal locks authenticity, preventing tampering, manipulation, or erasure.
+    </p>
+    <img src="/assets/images/sealchain-diagram.png" alt="SealChain Custody Diagram" class="mx-auto mt-4 rounded" />
+  </section>
+
+  <!-- Guardian Pillars Section -->
+  <section class="max-w-6xl mx-auto mt-12 px-6">
+    <h2 class="text-center text-2xl text-guardian font-bold mb-6">Guardian Pillars of Sovereign Memory</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-zinc-900 p-6 rounded shadow text-center">
+        <img src="/assets/images/sealchain-icon.svg" alt="SealChain Icon" class="mx-auto mb-3" />
+        <h3 class="text-lg font-semibold text-guardian">SealChain</h3>
+        <p class="text-zinc-400 text-sm">
+          Immutable custody for verified testimony, documents, and memory capsules. Prevents tampering, manipulation, or erasure.
+        </p>
       </div>
-    </header>
-
-    <!-- Truth Sovereignty Section -->
-    <section class="max-w-3xl mx-auto text-center">
-      <h2 class="text-xl text-guardian font-semibold mb-2">Truth Sovereignty Begins Here</h2>
-      <p class="text-zinc-300">Guardian is the world’s first Sovereign Memory Infrastructure, designed to anchor verified truth in a digital era of misinformation. Through SealChain custody, Vaultstream preservation, and Veritas certification, Guardian defends reality itself.</p>
-    </section>
-
-    <!-- SealChain Section -->
-    <section class="max-w-3xl mx-auto text-center">
-      <h2 class="text-xl text-guardian font-semibold mb-2">SealChain Custody: Immutable Chain of Truth</h2>
-      <p class="text-zinc-300">Guardian’s SealChain establishes an unbreakable chain of custody for every verified testimony, document, and memory capsule. Each Seal locks authenticity, preventing tampering, manipulation, or erasure.</p>
-      <img src="/assets/images/sealchain-diagram.png" alt="SealChain Custody Diagram" class="mx-auto mt-4 rounded" />
-    </section>
-
-    <!-- Guardian Pillars Section -->
-    <section class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-      <div class="p-4 border border-zinc-700 rounded shadow">
-        <img src="/assets/images/sealchain-icon.svg" alt="SealChain Icon" class="mx-auto mb-2 w-12" />
-        <h3 class="text-guardian font-semibold">SealChain</h3>
-        <p class="text-zinc-300 text-sm">Immutable custody for verified testimony, documents, and capsules. Cryptographic defense against tampering and erasure.</p>
+      <div class="bg-zinc-900 p-6 rounded shadow text-center">
+        <img src="/assets/images/vaultstream-icon.svg" alt="Vaultstream Icon" class="mx-auto mb-3" />
+        <h3 class="text-lg font-semibold text-guardian">Vaultstream</h3>
+        <p class="text-zinc-400 text-sm">
+          Preserves authentic memory long-term. Ensures sovereignty, security, and recoverability for digital legacies.
+        </p>
       </div>
-      <div class="p-4 border border-zinc-700 rounded shadow">
-        <img src="/assets/images/vaultstream-icon.svg" alt="Vaultstream Icon" class="mx-auto mb-2 w-12" />
-        <h3 class="text-guardian font-semibold">Vaultstream</h3>
-        <p class="text-zinc-300 text-sm">Preserves authentic memory long-term. Ensures digital legacies are sovereign, recoverable, and protected.</p>
+      <div class="bg-zinc-900 p-6 rounded shadow text-center">
+        <img src="/assets/images/veritas-icon.svg" alt="Veritas Icon" class="mx-auto mb-3" />
+        <h3 class="text-lg font-semibold text-guardian">Veritas Certification</h3>
+        <p class="text-zinc-400 text-sm">
+          Anchors truth in public. Veritas Engine issues public certificates that preserve and validate memory forever.
+        </p>
       </div>
-      <div class="p-4 border border-zinc-700 rounded shadow">
-        <img src="/assets/images/veritas-icon.svg" alt="Veritas Icon" class="mx-auto mb-2 w-12" />
-        <h3 class="text-guardian font-semibold">Veritas Certification</h3>
-        <p class="text-zinc-300 text-sm">Anchors truth in public. Veritas Engine issues certificates defending reality in the AI age.</p>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="mt-20 text-center text-zinc-500 text-sm">
-      <p>&copy; 2025 Guardian Sovereign Memory Infrastructure | All Rights Reserved</p>
-      <nav class="mt-2 space-x-4">
-        <a href="/contact.html" class="hover:text-guardian">Contact</a>
-        <a href="/investors.html" class="hover:text-guardian">Investors</a>
-        <a href="/technology.html" class="hover:text-guardian">Technology</a>
-      </nav>
-    </footer>
+  <!-- Footer -->
+  <footer class="text-center mt-12 py-8 border-t border-zinc-800">
+    <p class="text-sm text-zinc-500">&copy; 2025 Guardian Sovereign Memory Infrastructure | All Rights Reserved</p>
+    <nav class="mt-3 space-x-4 text-sm text-zinc-400">
+      <a href="/contact.html" class="hover:text-zinc-200">Contact</a>
+      <a href="/investors.html" class="hover:text-zinc-200">Investors</a>
+      <a href="/technology.html" class="hover:text-zinc-200">Technology</a>
+    </nav>
+  </footer>
 
-  </body>
+</body>
 </html>
-
